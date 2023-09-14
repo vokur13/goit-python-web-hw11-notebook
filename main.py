@@ -3,10 +3,12 @@ from sqlalchemy import text
 from sqlalchemy.orm import Session
 from starlette import status
 
-import contacts
-from database import get_db
+from src.routes import contacts
+
+from src.db.database import get_db
 
 app = FastAPI()
+
 
 app.include_router(contacts.router, prefix="/api")
 
